@@ -1,4 +1,9 @@
-# BioAligned-Fit
-A Data-Driven Exploration of How Women Should Work Out Across Hormonal Phases
-Women’s hormonal cycles influence strength, endurance, and recovery — yet most workout programs ignore this.
-The goal is to analyze real or synthetic physiological and fitness data to uncover how different types of workouts (strength, cardio, yoga, rest) affect energy and recovery across menstrual phases, sleep patterns, and stress levels.
+
+# 💪 BioAligned Fit — Cycle-Aware Workout Recommendation System
+
+A personalized workout recommendation system built with **Flask**, **Streamlit**, and **Machine Learning**, designed to adapt workouts based on the menstrual cycle phase, hormone levels, and fatigue estimation.
+
+## 🚀 How to Run
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/AninditaSanjagiri/BioAligned-Fit.git
