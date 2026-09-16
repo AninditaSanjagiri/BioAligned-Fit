@@ -182,7 +182,18 @@ export default function Dashboard({ onLogout, onGenerateWorkout, onStartSavedWor
       </aside>
 
       {/* CENTER CONTENT */}
-      <main className="flex-1 overflow-y-auto px-10 py-10 relative">
+      <main className="flex-1 overflow-y-auto px-6 lg:px-10 py-8 lg:py-10 pb-28 relative">
+        
+        {/* MOBILE TOP HEADER (Hidden on Desktop) */}
+        <div className="lg:hidden flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold flex items-center gap-2 tracking-tight">
+            <span className="text-purple-700">🌿</span> BioAligned
+          </h2>
+          <button onClick={onLogout} className="text-xs font-bold tracking-widest uppercase text-red-500 bg-red-50 px-4 py-2 rounded-full">
+            Log Out
+          </button>
+        </div>
+
         {activeTab === "home" && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             {/* HERO CARD */}
@@ -299,6 +310,30 @@ export default function Dashboard({ onLogout, onGenerateWorkout, onStartSavedWor
         {activeTab === "workouts" && <VideoLibrary />}
         {activeTab === "progress" && <ProgressCharts />}
         {activeTab === "profile" && <Profile />}
+
+        {/* MOBILE BOTTOM NAV (Hidden on Desktop) */}
+        <nav className="lg:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-100 flex justify-around items-center px-2 py-4 z-50 pb-safe">
+          <button onClick={() => setActiveTab("home")} className={`flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-purple-700' : 'text-gray-400'}`}>
+            <span className="text-xl">🏠</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Home</span>
+          </button>
+          <button onClick={() => setActiveTab("my_plan")} className={`flex flex-col items-center gap-1 ${activeTab === 'my_plan' ? 'text-purple-700' : 'text-gray-400'}`}>
+            <span className="text-xl">📋</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Plan</span>
+          </button>
+          <button onClick={() => setActiveTab("cycle_insights")} className={`flex flex-col items-center gap-1 ${activeTab === 'cycle_insights' ? 'text-purple-700' : 'text-gray-400'}`}>
+            <span className="text-xl">🧬</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Insights</span>
+          </button>
+          <button onClick={() => setActiveTab("workouts")} className={`flex flex-col items-center gap-1 ${activeTab === 'workouts' ? 'text-purple-700' : 'text-gray-400'}`}>
+            <span className="text-xl">▶️</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Library</span>
+          </button>
+          <button onClick={() => setActiveTab("profile")} className={`flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-purple-700' : 'text-gray-400'}`}>
+            <span className="text-xl">👤</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider">Profile</span>
+          </button>
+        </nav>
 
       </main>
 

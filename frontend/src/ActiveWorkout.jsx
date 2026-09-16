@@ -125,7 +125,7 @@ export default function ActiveWorkout({ onEndWorkout, routine }) {
       </header>
 
       {/* SPLIT SCREEN MAIN AREA */}
-      <main className="flex-1 w-full max-w-7xl mx-auto p-6 pt-28 pb-32 flex flex-col lg:flex-row gap-8 relative z-10">
+      <main className="flex-1 w-full max-w-7xl mx-auto p-6 pt-28 pb-32 flex flex-col-reverse lg:flex-row gap-8 relative z-10">
         
         {/* LEFT PANE: FULL MARKDOWN PLAN */}
         <div className="flex-1 bg-white/5 backdrop-blur-sm border border-gray-800 rounded-[2.5rem] p-8 overflow-y-auto max-h-[75vh]">
@@ -180,7 +180,7 @@ export default function ActiveWorkout({ onEndWorkout, routine }) {
             ) : (
               <motion.div key="resting" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.1 }} className="w-full">
                 <h2 className="text-xl text-gray-400 font-serif mb-6 uppercase tracking-widest">Rest & Recover</h2>
-                <div className="text-[10rem] font-bold text-purple-400 leading-none mb-8 tabular-nums">{restTimeLeft}</div>
+                <div className="text-8xl md:text-[10rem] font-bold text-purple-400 leading-none mb-8 tabular-nums">{restTimeLeft}</div>
                 <button onClick={() => setRestTimeLeft(null)} className="px-8 py-3 rounded-full font-bold bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors">
                   Skip Rest ⏭
                 </button>
