@@ -16,7 +16,11 @@ MODEL_PATH = BASE_DIR / "models" / "rf_activity_model.pkl"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Allows your React app to connect
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:4173",
+        "*" # This allows Vercel (and anyone else) to connect. You can restrict it to your specific Vercel URL later!
+    ],
     allow_credentials=True,
     allow_methods=["*"], 
     allow_headers=["*"], 
