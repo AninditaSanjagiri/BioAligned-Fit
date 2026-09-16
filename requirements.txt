@@ -7,6 +7,3 @@ pydantic
 firebase-admin
 google-generativeai
 python-dotenv
-matplotlib
-seaborn
-streamlit
