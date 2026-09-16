@@ -46,7 +46,8 @@ export default function WorkoutGenerator({ onBack, onStart, onSave, biometrics }
         const token = await user.getIdToken();
 
         // 2. Call FastAPI with the exact payload
-        const response = await fetch("http://localhost:8000/predict", {
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+        const response = await fetch(`${API_BASE_URL}/predict`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
